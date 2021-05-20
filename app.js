@@ -12,14 +12,37 @@
 // HINT: recycling code is never bad practice.
 
 // This functions should check the integrity of the parameters and pass true/false
-function checkParamsFn(year, month, day) {
-  // Write your code here
-}
+function checkParamsFn(year, month, day){
+  if(Number.isInteger(year) && Number.isInteger(month) && Number.isInteger(day)){
+    return true;
+  
+  } else {return false}
+  }
+
 
 // This functions checks if the person is or above 18 years of age, return true/false
 function checkOverEighteenFn(year, month, day) {
-  // Write your code here
-}
+  let nowYear = new Date().getFullYear();
+  let nowMonth = new Date().getMonth() + 1;
+  let nowDay = new Date().getDate();
+  let age;
+  console.log(nowMonth,month)
+  console.log(nowYear,year)
+  if (nowMonth < month ){
+     age = (nowYear - year) - 1
+    console.log(age)
+  }
+    else{
+        age = (nowYear - year)
+
+    console.log(age)
+  }
+ if(age >= 18){
+ return true;
+ } else{ return false;
+ }
+ }
+console.log(checkOverEighteenFn(2003, 6, 1));
 
 function calculateAgeFn(year, month, day) {
   // Write your code here
